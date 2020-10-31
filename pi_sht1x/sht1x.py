@@ -89,7 +89,6 @@ class SHT1x:
         self.logger.info('GPIO channel function status:\nData pin [{0}]: {1}\nClock pin [{2}]: {3}'
                          .format(self.data_pin, GPIO_FUNCS[GPIO.gpio_function(self.data_pin)],
                                  self.sck_pin, GPIO_FUNCS[GPIO.gpio_function(self.sck_pin)]))
-        GPIO.cleanup()
         if exc_type is not None:
             self.logger.error('Exception in with block: {0}\n{1}\n{2}'.format(exc_type, exc_val, exc_tb))
             return False
